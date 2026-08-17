@@ -61,6 +61,7 @@ html {
     background-color: var(--color-bg-light);
     color: var(--color-text-dark);
     font-family: var(--font-body);
+    overflow-x: hidden;
 }
 
 body {
@@ -106,10 +107,11 @@ a {
 .header {
     position: fixed;
     top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
     width: calc(100% - 40px);
     max-width: 1440px;
+    margin: 0 auto;
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -1767,6 +1769,22 @@ section {
         border-right: 0 !important;
         border-top: 0 !important;
     }
+
+    /* Contact Info Panel and Form padding reduction to prevent overflow on mobile and tablet devices */
+    .contact-info-panel-3d,
+    .contact-form-card-3d {
+        padding: 30px 20px;
+    }
+
+    .contact-method-card {
+        padding: 16px 12px;
+        gap: 12px;
+    }
+
+    /* Prevent long email links from overflowing on mobile screen sizes */
+    .contact-method-card a {
+        word-break: break-all;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1801,6 +1819,36 @@ section {
         flex-direction: column;
         gap: 12px;
         text-align: center;
+    }
+
+    /* Container padding adjustment on very small screens */
+    .container {
+        padding: 0 16px;
+    }
+
+    /* Contact Info Panel and Form padding reduction to prevent overflow */
+    .contact-info-panel-3d,
+    .contact-form-card-3d {
+        padding: 20px 16px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .contact-method-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Prevent long email links and other fields from overflowing on mobile screen sizes */
+    .contact-method-card a,
+    .contact-method-card address {
+        word-break: break-all;
+        white-space: normal;
     }
 }
 
