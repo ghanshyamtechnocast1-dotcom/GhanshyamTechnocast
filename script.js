@@ -158,16 +158,16 @@ document.addEventListener('DOMContentLoaded', () => {
     reveals.forEach(reveal => revealObserver.observe(reveal));
 
     // --- 7. Active Navigation Links Highlights ---
-    const path = window.location.pathname;
+    const path = window.location.pathname.toLowerCase();
     let activePage = 'index.html';
     
-    if (path.includes('about.html')) {
+    if (path.includes('about')) {
         activePage = 'about.html';
-    } else if (path.includes('process.html')) {
+    } else if (path.includes('process')) {
         activePage = 'process.html';
-    } else if (path.includes('products.html')) {
+    } else if (path.includes('products')) {
         activePage = 'products.html';
-    } else if (path.includes('contact.html')) {
+    } else if (path.includes('contact')) {
         activePage = 'contact.html';
     }
     
